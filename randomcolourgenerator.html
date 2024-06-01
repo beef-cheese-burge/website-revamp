@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <title>random colour generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sniglet" rel="stylesheet">
+    <script>
+        function genertae() {
+            let h = Math.floor(Math.random() * 360);
+            let s = Math.floor(Math.random() * 40) + 60;
+            let l = Math.floor(Math.random() * 20) + 50;
+            let hslvalue = "hsl(" + h + ", " + s + "%, " + l + "%)"
+            let bg = document.querySelector('body');
+            bg.style.setProperty('--color', hslvalue);
+            document.getElementById("colourrr").innerHTML = hslvalue;
+        }
+    </script>
+    <style>
+        body {
+            background-color: var(--color);
+        }
+
+        button {
+            border: none;
+            border-radius: 4px;
+            font-family: "Sniglet", sans-serif;
+        }
+
+        button:hover {
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick=genertae()>generate!!!</button>
+    <button id="colourrr">colour value here</button>
+</body>
+
+</html>
